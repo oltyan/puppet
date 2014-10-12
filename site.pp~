@@ -22,7 +22,7 @@ package { "python-pip":
   require => Exec["apt-get update"]
 }
 
-#setup a class and package to install flask
+#This includes the python packages needed for the project 
 package { "flask":
   ensure => present,
   provider => pip
