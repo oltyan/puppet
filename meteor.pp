@@ -22,6 +22,10 @@ package { "python-pip":
   require => Exec["apt-get update"]
 }
 
+package { "curl":
+  ensure => present,
+}
+
 #This includes the python packages needed for the project 
 package { "flask":
   ensure => present,
