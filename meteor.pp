@@ -33,4 +33,10 @@ package { "flask":
   
 }
 
+#This is the line needed to install meteor
+exec { "get_meteor":
+  command => "curl https://install.meteor.com/ | sh",
+  path => "/usr/bin",
+}
+
 
