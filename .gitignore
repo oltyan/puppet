@@ -1,3 +1,4 @@
 *.pyc
 *.pp?
 *.*~
+meteor/.vagrant
