@@ -4,7 +4,7 @@ Exec {
 
 exec { "apt-get update": }
 
-package { "python":
+package { "python3":
   ensure => present,
   require => Exec["apt-get update"]
 }
