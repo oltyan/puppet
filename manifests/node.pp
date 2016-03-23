@@ -4,11 +4,15 @@ Exec {
 
 exec { "apt-get update": }
 
-class { '::nodejs':
-        manage_package_repo       => false,
-        nodejs_dev_package_ensure => 'present',
-        npm_package_ensure        => 'present',
-      }
+package { "nodejs": 
+    ensure => present,
+    require => Exec["apt-get update"]
+}
+
+package { "npm": 
+    ensure => present,
+    require => Exec["apt-get update"]
+}
 
 package { "git":
   ensure => present,
@@ -21,15 +25,6 @@ package { "vim":
 }
 
 package { "curl":
-  ensure => present,
+    ensure => present,
 }
 
-package { 'express':
-          ensure   => 'present',
-          provider => 'npm',
-        }
-
-package { 'mime':
-          ensure   => '1.2.4',
-          provider => 'npm',
-        }
